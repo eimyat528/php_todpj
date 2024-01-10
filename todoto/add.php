@@ -22,7 +22,7 @@
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary" name="" value="SUBMIT">
-            <a href="index.php" type="button" class="btn btn-default" name="" value="SUBMIT"></a>
+            <a href="index.php" type="button" class="btn btn-default" name="">Back</a>
         </div>
     </form>
  </div>
