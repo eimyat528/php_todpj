@@ -1,3 +1,25 @@
+
+<?php
+require 'config.php';
+ if($_POST){
+    $title = $_POST['title'];
+    $desc  = $_POST['description'];
+   
+    $sql = "INSERT INTO todoto(title,description) VALUES (:title,:description)";
+    $pdostatement = $pdo->prepare($sql);
+    $result = $pdostatement ->execute(
+        array(
+            ':title' => $title,
+            ':description' =>$desc
+        )
+    );
+    if($result){
+        echo "<script>alert('New ToDo is added');window.location.href='index.php';</script>";
+    }
+
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,7 +44,7 @@
         </div>
         <div class="form-group">
             <input type="submit" class="btn btn-primary" name="" value="SUBMIT">
-            <a href="index.php" type="button" class="btn btn-default" name="">Back</a>
+            <a href="index.php" type="button" class="btn btn-warning" name="">Back</a>
         </div>
     </form>
  </div>
